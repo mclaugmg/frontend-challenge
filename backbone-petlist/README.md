@@ -8,7 +8,6 @@ You can write it in ES5 or ES6, whichever you feel more comfortable with. (There
 Don't worry about the `Test` files, those are only there to make sure the base of the project works, and nothing to do with the code you will be writing.  
 You should spend only a few hours on this, and no more than about 4 hours. Don't take this is as a hard deadline, its more of a suggestion on our part. If you need a little extra time take it, but don't feel you need to spend several days on this.  
 
-
 ## Goals
 
 We are trying to get a sense of your day to day skills, and ability to write production ready code.
