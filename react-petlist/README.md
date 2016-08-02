@@ -3,30 +3,73 @@
 To view how the search page acts go to https://dogvacay.com/browse
 We will be pseudo implementing some of the modules.
 
-Write your JavaScript code in React Framework.  
-You can write it in ES5 or ES6.
-The 'Test' files are to make sure the project works.
-You should spend only a few hours on this. i.e. no more then 4 hours.
+Write your JavaScript code using the [React](https://facebook.github.io/react/) Framework.  
+You can write it in ES5 or ES6, whichever you feel more comfortable with. (There is no need to go out of your comfort zone, just try to write good clean code.)  
+Don't worry about the `Test` files, those are only there to make sure the base of the project works, and nothing to do with the code you will be writing.  
+You should spend only a few hours on this, and no more than about 4 hours. Don't take this is as a hard deadline, its more of a suggestion on our part. If you need a little extra time take it, but don't feel you need to spend several days on this.  
 
-## Goals
+### Data Endpoints
 
-We are trying to get a sense of your day to day skills, and ability to write production ready code.
-Treat this as a small project in which you would do for an actual job.
+The endpoints below will return the exact same data payload as shown below. We just want you to interact with the different endpoints.
+So the response that is returned by `http://localhost:3000/static/search.json` will be the same as `
+http://localhost:3000/static/search.json?service=boarding` and `
+http://localhost:3000/static/search.json?service=sitting`
 
-We are going to be examining how you approach the problem and solve it.
-How you go about organizing your code.
-When creating your code, realize that this code will have to be maintained by other members of your team.
-
-The endpoints below will return the same data. We just want you to interact with the endpoint.
-i.e. the data you get back from search.json will be the same as search.json?service=boarding or search.json?service=sitting
-
-## Endpoints you will need:
+### Payload
+```json
+{
+  "search" : [
+    {
+      "title": "title 1",
+      "description": "word1 description1 word2 description2 word3 description3 word4 description4",
+      "user": {
+        "first": "doug",
+        "last": "mc dougal"
+      },
+      "pet": {
+        "id": 1,
+        "name": "fido",
+        "type": "dog"
+      }      
+    },
+    {
+      "title": " yippie skippy doggie  day-daycare",
+      "desciption": "description description",
+      "user": {
+        "first": "george",
+        "last": "lucus"
+      },
+      "pet": {
+        "id": 2,
+        "name": "kitty",
+        "type": "cat"
+      }
+    },
+    {
+      "title": "my doggie's play pen",
+      "desciption": "memememem mememmememeem memememe mememememememe mememem",
+      "user": {
+        "first": "luke",
+        "last": "skywalker"
+      },
+      "pet": {
+        "id": 3,
+        "name": "ribbet",
+        "type": "frog"
+      }
+    }
+  ]
+}
 ```
-  http://localhost:3000
+
+### Individual Endpoints
+
+```
   http://localhost:3000/static/search.json
   http://localhost:3000/static/search.json?service=boarding
   http://localhost:3000/static/search.json?service=sitting
 ```
+
 ## User Stories
 
 __GIVEN__: A user comes to a search page  
