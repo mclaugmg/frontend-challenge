@@ -1,15 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Test from 'components/Test';
+const React = require('react');
+const ReactDOM = require('react-dom');
+// const Test = require('components/Test');
+const CSS = require('./index.css');
 
 const dest = document.getElementById('content');
 
-ReactDOM.render(
-  <div>
-    <Test value={2} default="messages" one="message" /><br/>
-    <Test value={1} default="messages" one="message" />
-  </div>,
-  dest
-);
+const App = React.createClass({
+  getInitialState() {
+    return {
+    };
+  },
+
+  render() {
+    return (
+      <div>Hello, world</div>
+    );
+  },
+});
+
+ReactDOM.render(<App />, dest);
 
 window.React = React; // enable debugger
