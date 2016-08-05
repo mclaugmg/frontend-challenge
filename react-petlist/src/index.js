@@ -1,7 +1,6 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
-const CSS = require('./index.css');
-// const Test = require('components/Test');
+const CSS = require('./index.scss');
 const Search = require('./components/Search.js');
 const Petlist = require('./components/Petlist.js');
 
@@ -11,25 +10,27 @@ const App = React.createClass({
   getInitialState() {
     return {
       filter: 'none',
-      vacayData: {},
+      vacayData: [],
     };
   },
 
   componentWillMount() {
-    this.getVacayData();
+    this.getVacayData('none');
   },
 
-  getVacayData() {
+  getVacayData(filter) {
+    if (filter === this.state.filter) filter = 'none';
     let url = 'http://localhost:3000/static/search.json';
-    if (this.state.filter === 'boarding') url += '?service=boarding';
-    else if (this.state.filter === 'sitting') url += '?service=sitting';
+    if (filter === 'boarding') url += '?service=boarding';
+    else if (filter === 'sitting') url += '?service=sitting';
+    console.log('url is ', url);
 
     const xmlhttp = new XMLHttpRequest();
 
     xmlhttp.onreadystatechange = () => {
       if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-        const myArr = JSON.parse(xmlhttp.responseText);
-        this.updatePetlist(myArr);
+        const searchResult = JSON.parse(xmlhttp.responseText);
+        this.setState({ vacayData: searchResult.search, filter });
       }
     };
 
@@ -37,15 +38,16 @@ const App = React.createClass({
     xmlhttp.send();
   },
 
-  updatePetlist(arr) {
-    this.setState({ vacayData: arr });
-  },
-
   render() {
     return (
       <div id="petlist-container">
-        <Search />
-        <Petlist />
+        <Search
+          filter={this.state.filter}
+          getVacayData={this.getVacayData}
+        />
+        <Petlist
+          vacayData={this.state.vacayData}
+        />
       </div>
     );
   },
