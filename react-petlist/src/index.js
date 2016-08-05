@@ -3,7 +3,6 @@ const ReactDOM = require('react-dom');
 const CSS = require('./index.scss');
 const Search = require('./components/Search.js');
 const Petlist = require('./components/Petlist.js');
-
 const dest = document.getElementById('content');
 
 const App = React.createClass({
@@ -14,10 +13,12 @@ const App = React.createClass({
     };
   },
 
+  // get API data when the component will mount first time
   componentWillMount() {
     this.getVacayData('none');
   },
 
+  // leaving console.log in to show different API endpoint interactions
   getVacayData(filter) {
     if (filter === this.state.filter) filter = 'none';
     let url = 'http://localhost:3000/static/search.json';

@@ -23,19 +23,23 @@ const Petlist = ({ vacayData }) => {
   );
 };
 
+// first letter in firstname/lastname capitalized, only first letter in lastname is shown
 const formatName = (first, last) => {
   const formattedFirst = first.trim().charAt(0).toUpperCase() + first.substr(1);
   const formattedLast = `${last.trim().charAt(0).toUpperCase()}.`;
   return `${formattedFirst} ${formattedLast}`;
 };
 
+// trim unwanted whitespace in title
 const formatTitle = title => {
   return title.trim().replace(/  +/g, ' ');
 };
 
+// format description to be cutoff length, but without splitting a word into parts
 const formatDescription = (str, cutoff) => {
   str = str.trim().replace(/  +/g, ' ');
   if (str.length < cutoff) return str;
+  // logic for detecting if char at end is part of a word
   if (str.charAt(cutoff - 1) !== ' ' && str.charAt(cutoff) !== ' ') {
     return `${str.substr(0, str.lastIndexOf(' '))}...`;
   }
