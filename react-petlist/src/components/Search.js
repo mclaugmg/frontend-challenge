@@ -3,8 +3,9 @@ const React = require('react');
 const Search = () => {
   return (
     <div className="search-bar">
-      <div id="boarding">Boarding</div>
-      <div id="sitting">Sitting</div>
+      <h1>Type of Vacay</h1>
+      <div id="boarding"><p>Boarding</p></div>
+      <div id="sitting"><p>Sitting</p></div>
     </div>
   );
 };

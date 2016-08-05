@@ -64,7 +64,7 @@ webpackConfig.plugins = [
 webpackConfig.module.loaders = [
   { test: /\.jsx?$/, exclude: /node_modules/, loaders: ['babel'] },
   { test: /\.json$/, loader: 'json' },
-  { test: /\.css$/, loader: "style-loader!css-loader" }
+  { test: /\.scss$/, loader: 'style-loader!css-loader!sass-loader!' },
 ];
 
 export default webpackConfig;

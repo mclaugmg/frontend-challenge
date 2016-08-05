@@ -1,6 +1,6 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
-const CSS = require('./index.css');
+const CSS = require('./index.scss');
 // const Test = require('components/Test');
 const Search = require('./components/Search.js');
 const Petlist = require('./components/Petlist.js');
