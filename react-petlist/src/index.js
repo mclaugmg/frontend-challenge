@@ -11,7 +11,7 @@ const App = React.createClass({
   getInitialState() {
     return {
       filter: 'none',
-      vacayData: {},
+      vacayData: [],
     };
   },
 
@@ -28,8 +28,8 @@ const App = React.createClass({
 
     xmlhttp.onreadystatechange = () => {
       if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-        const myArr = JSON.parse(xmlhttp.responseText);
-        this.updatePetlist(myArr);
+        const searchResult = JSON.parse(xmlhttp.responseText);
+        this.updatePetlist(searchResult);
       }
     };
 
@@ -37,15 +37,17 @@ const App = React.createClass({
     xmlhttp.send();
   },
 
-  updatePetlist(arr) {
-    this.setState({ vacayData: arr });
+  updatePetlist(searchResult) {
+    this.setState({ vacayData: searchResult.search });
   },
 
   render() {
     return (
       <div id="petlist-container">
         <Search />
-        <Petlist />
+        <Petlist
+          vacayData={this.state.vacayData}
+        />
       </div>
     );
   },
