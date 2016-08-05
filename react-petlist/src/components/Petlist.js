@@ -7,10 +7,10 @@ const Petlist = ({ vacayData }) => {
       // handle inconsistent description key naming
       const descriptionString = element.description || element.desciption;
       return (<div className="pet-info-block">
-        <h1 id="user-name">{formatName(element.user.first, element.user.last)}</h1>
-        <p id="title">{formatTitle(element.title)}</p>
-        <p id="description">{formatDescription(descriptionString, 48)}</p>
-        <p id="pet-name">{element.pet.name}</p>
+        <h1 className="user-name">{formatName(element.user.first, element.user.last)}</h1>
+        <p className="title">{formatTitle(element.title)}</p>
+        <p className="pet-name">{element.pet.name}</p>
+        <p className="description">{formatDescription(descriptionString, 48)}</p>
       </div>
       );
     });

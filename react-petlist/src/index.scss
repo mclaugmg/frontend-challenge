@@ -1,7 +1,9 @@
+$darkest-green: rgb(42, 73, 75);
 $dark-green: rgb(15, 116, 140);
 $light-green: rgb(105, 187, 192);
 $background-tan: rgb(246,246,241);
 $border-color: rgb(223, 228, 229);
+$light-text: rgb(127, 146, 148);
 $margin-left: 112px;
 
 * {
@@ -18,16 +20,21 @@ body {
 // ------------------------------------
 
 .search-bar {
+  position:fixed;
+  display:block;
   background: white;
   height: 100px;
   width: 100%;
+  top: 0px;
   border-top: 1px solid $border-color;
   border-bottom: 1px solid $border-color;
 
   h1 {
     font-size: 14px;
+    margin-top: 20px;
     font-weight: bold;
     margin-left: $margin-left;
+    color: $darkest-green;
   }
 
   div {
@@ -38,6 +45,7 @@ body {
     text-align: center;
     color: $dark-green;
     border: 1px solid $light-green;
+    margin-top: 5px;
 
     p {
       font-weight: bold;      
@@ -68,6 +76,11 @@ body {
 // Petlist Divs
 // ------------------------------------
 
+#petlist {
+  margin-top: 125px;
+  display: block;
+}
+
 .pet-info-block {
   background: white;
   margin-top: 25px;
@@ -76,4 +89,33 @@ body {
   height: 280px;
   border: 1px solid $border-color;
   border-radius: 4px;
+
+  .user-name {
+    font-size: 24px;
+    color: $darkest-green;
+    font-weight: bold;
+    margin: 20px 20px;
+  }
+
+  .title {
+    font-size: 20px;
+    color: $light-text;
+    margin: 20px 20px;    
+  }
+
+  .pet-name {
+    font-size: 14px;
+    color: $darkest-green;    
+    margin: 5px 20px;
+  }
+
+  .description {
+    font-size: 14px;
+    color: $light-text;
+    margin: 5px 20px    
+  }
+}
+
+.pet-info-block:hover {
+  border: 1px solid $darkest-green;
 }
